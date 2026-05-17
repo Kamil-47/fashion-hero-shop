@@ -2,17 +2,10 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { useAuth } from "@/components/auth-provider";
 
-const mockOrders = [
-  { id: "SF-10042", date: "March 15, 2026", status: "Delivered", total: 592 },
-  { id: "SF-10038", date: "February 22, 2026", status: "Delivered", total: 940 },
-  { id: "SF-10031", date: "January 8, 2026", status: "Delivered", total: 480 },
-];
-
 export default function AccountPage() {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -24,6 +17,7 @@ export default function AccountPage() {
   }, [user, router]);
 
   return null;
+}
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-16">
