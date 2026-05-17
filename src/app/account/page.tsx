@@ -18,10 +18,12 @@ export default function AccountPage() {
   useEffect(() => {
     if (!user) {
       router.push("/account/login");
+    } else {
+      router.push("/seller-dashboard");
     }
   }, [user, router]);
 
-  if (!user) return null;
+  return null;
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-16">

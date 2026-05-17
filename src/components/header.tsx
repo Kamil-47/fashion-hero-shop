@@ -76,7 +76,7 @@ export function Header({ onCartOpen, cartCount = 0, wishlistCount = 0 }: HeaderP
             )}
           </Link>
           <Link
-            href={user ? "/account" : "/account/login"}
+            href={user ? "/seller-dashboard" : "/account/login"}
             aria-label="Account"
             className="hidden sm:flex p-1 hover:opacity-60 transition-opacity items-center justify-center"
           >

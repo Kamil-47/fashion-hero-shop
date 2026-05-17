@@ -1,9 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { CloseIcon } from "@/components/icons";
+import { useAuth } from "@/components/auth-provider";
 
 export default function SellerDashboardPage() {
+  const { logout } = useAuth();
+  const router = useRouter();
   const [modalOpen, setModalOpen] = useState(false);
   const [closing, setClosing] = useState(false);
 
@@ -88,6 +92,12 @@ export default function SellerDashboardPage() {
         <p className="text-sm text-teal-700">Dorota</p>
         <p className="text-sm text-teal-700 mt-0.5">dorota@example.com</p>
         <p className="text-[12px] text-warm-gray mt-1">Source: paid_campaign · New seller</p>
+        <button
+          onClick={() => { logout(); router.push("/"); }}
+          className="btn-cta-outline text-[12px] w-full mt-6"
+        >
+          SIGN OUT
+        </button>
       </div>
 
       {/* Modal */}

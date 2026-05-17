@@ -20,7 +20,7 @@ export default function LoginPage() {
       return;
     }
     await login(email, password);
-    router.push("/account");
+    router.push("/seller-dashboard");
   }
 
   return (

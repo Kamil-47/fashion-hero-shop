@@ -33,7 +33,7 @@ export default function RegisterPage() {
     }
 
     await register({ email, password, firstName, lastName });
-    router.push("/account");
+    router.push("/seller-dashboard");
   }
 
   return (
